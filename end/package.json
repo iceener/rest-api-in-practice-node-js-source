@@ -1,0 +1,30 @@
+{
+  "name": "overment",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "rimraf ./dist && babel ./src -d ./dist",
+    "prestart": "npm run -s build",
+    "start": "NODE_ENV=production PORT=8080 node dist/index.js",
+    "dev": "NODE_ENV=development PORT=8080 nodemon -w ./src --exec \"babel-node ./src\""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.3",
+    "mongoose": "^5.1.2",
+    "mongoose-url-slugs": "^1.0.2",
+    "pug": "^2.0.3"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.3",
+    "babel-plugin-transform-async-to-generator": "^6.24.1",
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "rimraf": "^2.6.2"
+  }
+}
